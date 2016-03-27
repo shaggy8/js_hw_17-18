@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+</head>
+<body>
+	<form action="">
+		<h1>Тест на <span class="crossed">наркоманію</span> програміста</h1>
+		<ol>
+		</ol>
+		<script type="text/tmpl" id="madtest">
+			<%for (var key in test) {%>
+				<li><%=test[key]['question']%>
+					<%var answers = test[key]['answers'];%>
+					<%for (var i = 0; i < answers.length; i++) {%>
+						<%for (var val in answers[i]) {%>
+					<label>
+						<input type="checkbox" data-value="<%=val%>">
+						<%=answers[i][val]%>
+					</label>
+						<%};%>
+					<%};%>
+				</li>
+			<%};%>
+		</script>
+		<input type="submit" value="Перевірити мої результати">
+	</form>
+	<div class="modal close">
+		<div class="modal-window">
+			<div class="modal-window-header">
+				<button class="close">X</button>
+				<h4><span class="crossed">Ваш діагноз</span> Ваші результати</h4>
+			</div>
+			<div class="modal-window-content">Lorem ipsum</div>
+			<div class="modal-window-footer">
+				<button class="close">Закрити</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
